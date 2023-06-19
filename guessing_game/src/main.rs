@@ -2,7 +2,7 @@ use std::io;
 use rand::Rng;
 use std::cmp::Ordering;
 
-fn compare(guess: u32, rand: u32) {
+fn compare(guess: &u32, rand: &u32) {
     match guess.cmp(&rand) {
         Ordering::Less => println!("Too Low::guess = {guess} < rand = {rand}"),
         Ordering::Greater => println!("Too High::guess = {guess} > rand = {rand}"),
@@ -27,7 +27,7 @@ fn guess() {
 
     println!("You guessed {guess}");
 
-    compare(guess, rand);
+    compare(&guess, &rand);
 }
 
 
